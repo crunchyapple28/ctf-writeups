@@ -6,6 +6,7 @@ The first 5 levels are simple exercises in navigating through the terminal and i
 ## Bandit Level 0 + 0 → Level 1
 
 Level Goal
+
 The goal of this level is for you to log into the game using SSH. The host to which you need to connect is bandit.labs.overthewire.org, on port 2220. The username is bandit0 and the password is bandit0. Once logged in, go to the Level 1 page to find out how to beat Level 1.
 The password for the next level is stored in a file called readme located in the home directory. Use this password to log into bandit1 using SSH. Whenever you find a password for a level, use SSH (on port 2220) to log into that level and continue the game.
 
@@ -26,6 +27,7 @@ The password from this level is in the home directory, which we can see by using
 
 
 Level Goal
+
 The password for the next level is stored in a file called - located in the home directory
 
 This time, we log in as user bandit 1 with the password provided from the last level. I recommend storing the passwords somewhere so you don't have to redo the levels every time (or just look them up lol)
@@ -42,6 +44,7 @@ By providing it with ./ , we're specifying that we're looking for - within our c
 
 
 Level Goal
+
 The password for the next level is stored in a file called --spaces in this filename-- located in the home directory
 
 Spaces cause issues because we use spaces to separate commands from their arguments in the command line, so the system treats every word as a separate file or command. To bypass this issue, we can simply encase the file name in quotation marks, so 
@@ -58,7 +61,7 @@ However, in this case, another problem arises. Since the filename starts with ``
 
 <img width="568" height="131" alt="Screenshot 2026-09-18 at 12 21 44" src="https://github.com/user-attachments/assets/a6f462f2-cb1f-4214-97ba-b8cff11a2118" />
 
-To overcome this, we need to do ``cat -- "--spaces in this filename--" ``. The quotations help us overcome the space problem, and the ``--`` tell ``cat`` that everything that comes after that is an argument and not an option. Note that it's two dashes, not one and that there has to be space between them and the quotation marks, otherwise ``--"--spaces in this filename--"`` will be interpreted as one argument. An argument is simply information we give to a command that we want it to operate on. 
+To overcome this, we need to do ``cat -- "--spaces in this filename--" ``. The quotations help us overcome the space problem, and the ``--`` tell ``cat`` that everything that comes after that is an argument and not an option. Note that it's two dashes, not one (which you can see by my many trials and errors as I tried to remember this) and that there has to be space between them and the quotation marks, otherwise ``--"--spaces in this filename--"`` will be interpreted as one argument. An argument is simply information we give to a command that we want it to operate on. 
 
 After doing that we get the password for the next level.
 
@@ -68,6 +71,7 @@ After doing that we get the password for the next level.
 
 
 Level Goal
+
 The password for the next level is stored in a hidden file in the inhere directory.
 
 Here we learn the `` -la `` function. ``ls`` tells the shell to list out all the contents of the current directory we're in, while the added ``-la`` gives ``ls`` two options, ``l`` for long format, so instead of something like 
@@ -97,6 +101,7 @@ Make sure you don't mistake the three dots as a directory, only ``.`` (current) 
 
 
 Level Goal
+
 The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
 
 Here we're learning how to combine commands. Within the **inhere** directory we have 10 files, and while you could check them all manually, the point of the challenges is to teach you how to navigate around the terminal 
@@ -115,6 +120,7 @@ Running this will give us the file our password is stored in.
 
 
 Level Goal
+
 The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
 
 human-readable
